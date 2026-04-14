@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://xera-2011.github.io',
-  baseUrl: '/x-english/',
+  url: 'https://x-english.pages.dev',
+  baseUrl: '/',
   trailingSlash: false,
 
   organizationName: 'xera-2011',
