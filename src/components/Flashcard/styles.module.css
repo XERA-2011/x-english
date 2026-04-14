@@ -33,14 +33,17 @@
 }
 
 .cardFront {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  color: #ffffff;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--xe-border-stronger);
+  box-shadow: 0 4px 24px rgba(24, 226, 153, 0.08);
 }
 
 .cardBack {
-  background: var(--xe-surface-raised);
+  background: var(--ifm-background-surface-color);
   color: var(--xe-text);
   transform: rotateY(180deg);
+  border: 1px solid var(--xe-border);
 }
 
 .cardLabel {
@@ -54,8 +57,8 @@
 
 .frontWord {
   font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
   margin-bottom: 0.25rem;
 }
 
