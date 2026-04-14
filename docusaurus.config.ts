@@ -11,8 +11,9 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://x-english.vercel.app',
-  baseUrl: '/',
+  url: 'https://xera-2011.github.io',
+  baseUrl: '/x-english/',
+  trailingSlash: false,
 
   organizationName: 'xera-2011',
   projectName: 'x-english',
