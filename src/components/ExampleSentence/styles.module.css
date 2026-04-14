@@ -1,0 +1,59 @@
+.example {
+  border-left: 3px solid var(--ifm-color-primary);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  background: var(--xe-surface-raised);
+  border-radius: 0 12px 12px 0;
+}
+
+.sentenceRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.en {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--xe-text);
+}
+
+.highlight {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--ifm-color-primary);
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.cn {
+  font-size: 0.9rem;
+  color: var(--xe-text-secondary);
+  margin: 0.5rem 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--xe-text-secondary);
+  line-height: 1.5;
+}
+
+.noteIcon {
+  flex-shrink: 0;
+}
