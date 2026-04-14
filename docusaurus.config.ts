@@ -12,7 +12,7 @@ const config: Config = {
   },
 
   url: 'https://x-english.pages.dev',
-  baseUrl: '/',
+  baseUrl: process.env.DOCUSAURUS_BASE_URL || '/',
   trailingSlash: false,
 
   organizationName: 'xera-2011',
