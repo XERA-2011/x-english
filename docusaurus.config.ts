@@ -39,19 +39,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/xera-2011/x-english/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl: 'https://github.com/xera-2011/x-english/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'ignore',
-          onUntruncatedBlogPosts: 'warn',
-          blogTitle: '学习博客',
-          blogDescription: '英语学习技巧与心得分享',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -108,7 +96,6 @@ const config: Config = {
           position: 'left',
           label: '🎧 听力',
         },
-        {to: '/blog', label: '💡 博客', position: 'right'},
         {
           href: 'https://github.com/xera-2011/x-english',
           label: 'GitHub',
@@ -138,7 +125,6 @@ const config: Config = {
         {
           title: '更多',
           items: [
-            {label: '学习博客', to: '/blog'},
             {label: 'GitHub', href: 'https://github.com/xera-2011/x-english'},
           ],
         },
