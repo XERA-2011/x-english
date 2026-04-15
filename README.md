@@ -43,8 +43,7 @@ pnpm serve
 
 ## 部署 (Deployment)
 
-如果你使用 GitHub Pages 进行托管，可以使用以下命令快速构建并发布到 `gh-pages` 分支：
+本项目已配置完善的自动化构建（CI/CD），在本地**无须**执行部署命令。你只需向 GitHub `main` 分支提交代码，各大平台即可自动完成发版：
 
-```bash
-GIT_USER=<Your GitHub username> pnpm deploy
-```
+- **GitHub Pages**：已在 `.github/workflows/deploy.yml` 植入构建脚本。推送代码后，前往 GitHub 仓库的 `Settings -> Pages -> Build and deployment -> Source` 设为 `GitHub Actions` 即可。
+- **Cloudflare Pages / Vercel**：绑定你的 GitHub 仓库后，每次提交也会触发自动构建部署，全部无缝支持根域名访问。
