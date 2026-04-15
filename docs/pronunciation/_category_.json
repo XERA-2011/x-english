@@ -1,8 +1,4 @@
 {
-  "label": "🎤 英语发音",
-  "position": 3,
-  "link": {
-    "type": "doc",
-    "id": "pronunciation/intro"
-  }
+  "label": "发音",
+  "position": 6
 }

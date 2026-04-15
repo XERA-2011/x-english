@@ -1,8 +1,4 @@
 {
-  "label": "🎧 英语听力",
-  "position": 6,
-  "link": {
-    "type": "doc",
-    "id": "listening/intro"
-  }
+  "label": "听力",
+  "position": 4
 }
