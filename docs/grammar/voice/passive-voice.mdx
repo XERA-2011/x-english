@@ -1,0 +1,184 @@
+---
+sidebar_position: 8
+title: 被动语态
+description: 掌握被动语态的构成、用法与常见搭配
+---
+
+import DifficultyBadge from '@site/src/components/DifficultyBadge';
+import ExampleSentence from '@site/src/components/ExampleSentence';
+import GrammarDiagram from '@site/src/components/GrammarDiagram';
+import Quiz from '@site/src/components/Quiz';
+
+# 被动语态 Passive Voice <DifficultyBadge level="B1" />
+
+> 被动语态用来强调**动作的承受者**而非执行者，或者在不知道/不需要说明执行者时使用。
+
+## 一、构成规则
+
+**结构：be + 过去分词 (p.p.)**
+
+| 时态 | 主动语态 | 被动语态 |
+|------|---------|---------|
+| 一般现在时 | He **cleans** the room. | The room **is cleaned**. |
+| 一般过去时 | He **cleaned** the room. | The room **was cleaned**. |
+| 一般将来时 | He **will clean** the room. | The room **will be cleaned**. |
+| 现在进行时 | He **is cleaning** the room. | The room **is being cleaned**. |
+| 现在完成时 | He **has cleaned** the room. | The room **has been cleaned**. |
+| 情态动词 | He **can clean** the room. | The room **can be cleaned**. |
+
+## 二、句子成分分析
+
+<GrammarDiagram
+  sentence="This bridge was built in 1990."
+  parts={[
+    { text: "This bridge", role: "主语（动作承受者）", color: "#3b82f6" },
+    { text: "was built", role: "被动谓语", color: "#10b981" },
+    { text: "in 1990", role: "时间状语", color: "#8b5cf6" },
+  ]}
+/>
+
+## 三、主动变被动的步骤
+
+```
+主动：Tom    wrote    this letter.
+      主语    谓语      宾语
+        ↓       ↓        ↓
+被动：This letter  was written  (by Tom).
+      新主语       被动谓语     施动者（可省略）
+```
+
+:::info 三步变换法
+1. 将原句的**宾语**变为新句的**主语**
+2. 谓语变为 **be + p.p.**（be 的时态与原句保持一致）
+3. 原来的主语变为 **by + 施动者**（可省略）
+:::
+
+## 四、用法详解
+
+### 1. 强调动作承受者
+
+<ExampleSentence
+  en="The window was broken by the children."
+  cn="窗户被孩子们打破了。"
+  highlights={["was broken"]}
+  note="重点在于'窗户被打破'，而非谁打破的"
+/>
+
+### 2. 不知道或不需要说明执行者
+
+<ExampleSentence
+  en="My bike was stolen last night."
+  cn="我的自行车昨晚被偷了。"
+  highlights={["was stolen"]}
+  note="不知道是谁偷的，省略 by..."
+/>
+
+<ExampleSentence
+  en="English is spoken all over the world."
+  cn="英语在全世界被使用。"
+  highlights={["is spoken"]}
+  note="执行者是'全世界的人'，无需特别指明"
+/>
+
+### 3. 各时态的被动语态
+
+<ExampleSentence
+  en="The report will be finished by Friday."
+  cn="报告将在周五之前完成。"
+  highlights={["will be finished"]}
+  note="一般将来时的被动语态：will be + p.p."
+/>
+
+<ExampleSentence
+  en="The road is being repaired right now."
+  cn="这条路目前正在修缮中。"
+  highlights={["is being repaired"]}
+  note="现在进行时的被动语态：is being + p.p."
+/>
+
+<ExampleSentence
+  en="The homework has been submitted."
+  cn="作业已经提交了。"
+  highlights={["has been submitted"]}
+  note="现在完成时的被动语态：has been + p.p."
+/>
+
+### 4. 含情态动词的被动语态
+
+<ExampleSentence
+  en="This problem can be solved easily."
+  cn="这个问题可以很容易地解决。"
+  highlights={["can be solved"]}
+  note="情态动词 + be + p.p."
+/>
+
+<ExampleSentence
+  en="The rules must be followed by everyone."
+  cn="规则必须被每个人遵守。"
+  highlights={["must be followed"]}
+/>
+
+## 五、常见被动语态固定搭配
+
+| 搭配 | 含义 | 示例 |
+|------|------|------|
+| be made of | 由…制成（看得出原料） | The desk **is made of** wood. |
+| be made from | 由…制成（看不出原料） | Paper **is made from** wood. |
+| be known as | 被称为 | He **is known as** the "King of Pop." |
+| be covered with | 被…覆盖 | The ground **is covered with** snow. |
+| be interested in | 对…感兴趣 | She **is interested in** music. |
+| be surprised at | 对…感到惊讶 | We **were surprised at** the news. |
+
+## 六、实战练习
+
+<Quiz
+  type="multiple-choice"
+  question="The Great Wall _____ thousands of years ago."
+  options={["built", "was built", "is built", "has built"]}
+  answer="was built"
+  explanation="thousands of years ago 是过去时间，主语 The Great Wall 是动作承受者，用一般过去时的被动语态 was built。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="The bridge _____ by the end of next month."
+  options={["will complete", "will be completed", "is completed", "completes"]}
+  answer="will be completed"
+  explanation="by the end of next month 指将来，主语 bridge 是被建造的，用将来时被动语态 will be completed。"
+/>
+
+<Quiz
+  type="fill-blank"
+  question="English _____ (speak) in many countries around the world."
+  answer="is spoken"
+  explanation="表示客观事实，用一般现在时被动语态。speak → spoken（不规则变化）。"
+/>
+
+<Quiz
+  type="fill-blank"
+  question="The new hospital _____ (build) right now."
+  answer="is being built"
+  explanation="right now 表示正在进行，用现在进行时被动语态：is being + p.p.。"
+/>
+
+<Quiz
+  type="true-false"
+  question="「The letter has been write.」这句话语法正确。"
+  options={["True", "False"]}
+  answer="False"
+  explanation="write 的过去分词是 written，不是 write。正确说法：The letter has been written."
+/>
+
+## 七、小结
+
+:::tip 记忆口诀
+被动语态 be + done；
+强调承受不说人；
+各种时态 be 变化；
+情态动词加 be done；
+by 后施动可省略。
+:::
+
+---
+
+**下一课**：[虚拟语气](../subjunctive) →

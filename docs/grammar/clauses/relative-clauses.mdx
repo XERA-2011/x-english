@@ -1,0 +1,141 @@
+---
+sidebar_position: 10
+title: 定语从句
+description: 掌握定语从句的关系代词选择与用法
+---
+
+import DifficultyBadge from '@site/src/components/DifficultyBadge';
+import ExampleSentence from '@site/src/components/ExampleSentence';
+import GrammarDiagram from '@site/src/components/GrammarDiagram';
+import Quiz from '@site/src/components/Quiz';
+
+# 定语从句 Relative Clauses <DifficultyBadge level="B1" />
+
+> 定语从句用来修饰名词或代词，相当于一个形容词的功能。四级考试中考查频率极高。
+
+## 一、关系代词一览
+
+| 关系代词 | 指代 | 在从句中的成分 | 示例 |
+|---------|------|--------------|------|
+| **who** | 人 | 主语 | The man **who** called you is my dad. |
+| **whom** | 人 | 宾语 | The girl **whom** I met is kind. |
+| **whose** | 人/物 | 定语（…的） | The boy **whose** bag was lost cried. |
+| **which** | 物 | 主语/宾语 | The book **which** I bought is great. |
+| **that** | 人/物 | 主语/宾语 | The song **that** she sang was beautiful. |
+
+## 二、句子成分分析
+
+<GrammarDiagram
+  sentence="The student who won the prize is my classmate."
+  parts={[
+    { text: "The student", role: "主语", color: "#3b82f6" },
+    { text: "who won the prize", role: "定语从句（修饰 student）", color: "#10b981" },
+    { text: "is", role: "谓语", color: "#f59e0b" },
+    { text: "my classmate", role: "表语", color: "#8b5cf6" },
+  ]}
+/>
+
+## 三、限制性 vs 非限制性定语从句
+
+### 限制性定语从句（不加逗号）
+
+信息**必不可少**，去掉后句意不完整。
+
+<ExampleSentence
+  en="The students who passed the exam were very happy."
+  cn="通过考试的学生们非常高兴。"
+  highlights={["who passed the exam"]}
+  note="限制性从句：只有通过考试的学生才高兴，并非所有学生"
+/>
+
+### 非限制性定语从句（加逗号）
+
+信息是**补充说明**，去掉后句意仍然完整。**不能用 that**。
+
+<ExampleSentence
+  en="Beijing, which is the capital of China, has a long history."
+  cn="北京是中国的首都，有着悠久的历史。"
+  highlights={["which is the capital of China"]}
+  note="非限制性从句：补充说明北京是首都。不能用 that 替换 which"
+/>
+
+## 四、关系代词的选择
+
+### 只能用 that 的情况
+
+1. 先行词是 **everything / anything / nothing** 等不定代词
+2. 先行词被 **最高级** 修饰
+3. 先行词被 **序数词** 修饰
+4. 先行词**同时包含人和物**
+
+<ExampleSentence
+  en="This is the best movie that I have ever seen."
+  cn="这是我看过的最好的电影。"
+  highlights={["the best", "that"]}
+  note="先行词被最高级 best 修饰，只能用 that"
+/>
+
+<ExampleSentence
+  en="Is there anything that I can do for you?"
+  cn="有什么我能帮你的吗？"
+  highlights={["anything", "that"]}
+  note="先行词是不定代词 anything，只能用 that"
+/>
+
+### 只能用 which 的情况
+
+1. 非限制性定语从句中指物
+2. 介词后面
+
+<ExampleSentence
+  en="The house in which he lives is very old."
+  cn="他住的那栋房子很旧了。"
+  highlights={["in which"]}
+  note="介词 in 后面只能用 which，不能用 that"
+/>
+
+## 五、关系代词作宾语时可省略
+
+<ExampleSentence
+  en="The movie (that/which) we watched last night was exciting."
+  cn="我们昨晚看的那部电影很刺激。"
+  highlights={["we watched"]}
+  note="that/which 在从句中作宾语，可以省略"
+/>
+
+## 六、实战练习
+
+<Quiz
+  type="multiple-choice"
+  question="This is the most interesting book _____ I have ever read."
+  options={["which", "who", "that", "whom"]}
+  answer="that"
+  explanation="先行词被最高级 most interesting 修饰，只能用 that。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="The girl _____ father is a doctor studies very hard."
+  options={["who", "whom", "whose", "which"]}
+  answer="whose"
+  explanation="whose 表示'谁的'，在从句中作定语。whose father = 她的父亲。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="Beijing, _____ is the capital of China, attracts millions of tourists."
+  options={["that", "which", "who", "where"]}
+  answer="which"
+  explanation="非限制性定语从句中指物，只能用 which，不能用 that。"
+/>
+
+<Quiz
+  type="fill-blank"
+  question="Is there anything _____ you want to say? (用关系代词)"
+  answer="that"
+  explanation="先行词是不定代词 anything，只能用 that。"
+/>
+
+---
+
+**下一课**：[名词性从句](./noun-clauses) →
