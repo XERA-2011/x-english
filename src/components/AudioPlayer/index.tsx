@@ -27,7 +27,6 @@ export default function AudioPlayer({
       audio.playbackRate = speed;
       audio.play();
     }
-    setPlaying(!playing);
   };
 
   const cycleSpeed = () => {
@@ -39,11 +38,19 @@ export default function AudioPlayer({
     }
   };
 
-  const handleEnded = () => setPlaying(false);
+  const handlePlay = () => setPlaying(true);
+  const handlePause = () => setPlaying(false);
 
   return (
     <div className={styles.player}>
-      <audio ref={audioRef} src={src} onEnded={handleEnded} preload="metadata" />
+      <audio
+        ref={audioRef}
+        src={src}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onEnded={handlePause}
+        preload="metadata"
+      />
       <button
         className={`${styles.playBtn} ${playing ? styles.playing : ''}`}
         onClick={togglePlay}
