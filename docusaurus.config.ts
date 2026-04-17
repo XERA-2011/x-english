@@ -72,12 +72,7 @@ const config: Config = {
           position: 'left',
           label: '📝 词汇',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'pronunciationSidebar',
-          position: 'left',
-          label: '🎤 发音',
-        },
+
         {
           type: 'docSidebar',
           sidebarId: 'readingSidebar',
@@ -97,6 +92,12 @@ const config: Config = {
           label: '🎧 听力',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'pet3Sidebar',
+          position: 'left',
+          label: '🏆 PET3',
+        },
+        {
           href: 'https://github.com/xera-2011/x-english',
           label: 'GitHub',
           position: 'right',
@@ -111,7 +112,6 @@ const config: Config = {
           items: [
             {label: '语法', to: '/docs/grammar/intro'},
             {label: '词汇', to: '/docs/vocabulary/intro'},
-            {label: '发音', to: '/docs/pronunciation/intro'},
           ],
         },
         {
