@@ -18,11 +18,6 @@ const MODULES = [
     path: '/docs/vocabulary/intro',
   },
   {
-    title: '🎤 发音 Pronunciation',
-    description: '掌握国际音标与连读规则，开口自信表达。',
-    path: '/docs/pronunciation/intro',
-  },
-  {
     title: '📚 阅读 Reading',
     description: '分级阅读材料，提升语感与理解能力。',
     path: '/docs/reading/intro',
@@ -51,7 +46,7 @@ function HomepageHeader() {
             <span className={styles.heroTitleHighlight}>Engineering Precision</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            X-English 是一个面向中文学习者的现代化英语知识库。我们将英语学习解构为语法、词汇、发音等六大核心模块，助你从零基础到流利表达。
+            X-English 是一个面向中文学习者的现代化英语知识库。我们将英语学习解构为语法、词汇等五大核心模块，助你从零基础到流利表达。
           </p>
           <div className={styles.heroButtons}>
             <Link
