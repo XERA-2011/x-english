@@ -5,6 +5,9 @@ description: 英语写作学习路径与技巧
 ---
 
 import DifficultyBadge from '@site/src/components/DifficultyBadge';
+import ExampleSentence from '@site/src/components/ExampleSentence';
+import Flashcard from '@site/src/components/Flashcard';
+import Quiz from '@site/src/components/Quiz';
 
 # ✍️ 英语写作
 
@@ -39,7 +42,7 @@ import DifficultyBadge from '@site/src/components/DifficultyBadge';
 ### 📊 题型分布
 
 | 题型 | 分值 | 时间 | 字数要求 |
-|------|------|------|---------|
+|------|------|------|---------| 
 | 短文写作 | 15% | 30分钟 | 120-180词 |
 
 ### 🎯 常见题型
@@ -65,80 +68,83 @@ import DifficultyBadge from '@site/src/components/DifficultyBadge';
 
 ### 1. 内容原则（Content）
 
-**✅ 做到：**
-- 切题：紧扣题目要求
-- 完整：包含所有要点
-- 充实：有具体例子和细节
-- 连贯：逻辑清晰，过渡自然
+:::tip ✅ 做到
+- **切题**：紧扣题目要求
+- **完整**：包含所有要点
+- **充实**：有具体例子和细节
+- **连贯**：逻辑清晰，过渡自然
+:::
 
-**❌ 避免：**
-- 跑题：偏离主题
-- 空洞：缺乏具体内容
-- 重复：反复说同样的话
-- 跳跃：逻辑不连贯
+:::danger ❌ 避免
+- **跑题**：偏离主题
+- **空洞**：缺乏具体内容
+- **重复**：反复说同样的话
+- **跳跃**：逻辑不连贯
+:::
 
 ### 2. 语言原则（Language）
 
-**✅ 做到：**
-- 准确：语法正确，用词恰当
-- 多样：句式丰富，词汇多样
-- 地道：符合英语表达习惯
-- 简洁：避免冗余和啰嗦
+:::tip ✅ 做到
+- **准确**：语法正确，用词恰当
+- **多样**：句式丰富，词汇多样
+- **地道**：符合英语表达习惯
+- **简洁**：避免冗余和啰嗦
+:::
 
-**❌ 避免：**
-- 中式英语：直译中文表达
-- 单调：句式和词汇重复
-- 口语化：在正式写作中使用口语
-- 复杂化：为了复杂而复杂
+:::danger ❌ 避免
+- **中式英语**：直译中文表达
+- **单调**：句式和词汇重复
+- **口语化**：在正式写作中使用口语
+- **复杂化**：为了复杂而复杂
+:::
 
 ### 3. 结构原则（Structure）
 
-**✅ 做到：**
-- 分段清晰：3-5段为宜
-- 主题明确：每段一个中心思想
-- 首尾呼应：开头和结尾相呼应
-- 过渡自然：使用连接词
+:::tip ✅ 做到
+- **分段清晰**：3-5段为宜
+- **主题明确**：每段一个中心思想
+- **首尾呼应**：开头和结尾相呼应
+- **过渡自然**：使用连接词
+:::
 
-**❌ 避免：**
-- 不分段：整篇文章一段到底
-- 段落过长：一段超过10句话
-- 缺乏主题句：段落中心不明确
-- 突兀转折：缺少过渡词
+:::danger ❌ 避免
+- **不分段**：整篇文章一段到底
+- **段落过长**：一段超过10句话
+- **缺乏主题句**：段落中心不明确
+- **突兀转折**：缺少过渡词
+:::
 
 ---
 
 ## 写作流程
 
-### 📝 第一步：审题（2分钟）
-
-**要点：**
+:::info 📝 第一步：审题（2分钟）
 - 确定文体（议论文/应用文/图表作文）
 - 明确要求（字数、要点、格式）
 - 理解话题（关键词、限定词）
+:::
 
-### 📝 第二步：构思（3分钟）
-
-**要点：**
+:::info 📝 第二步：构思（3分钟）
 - 确定观点
 - 列出2-3个论据
 - 想好例子
+:::
 
-### 📝 第三步：写作（20分钟）
-
-**要点：**
+:::info 📝 第三步：写作（20分钟）
 - 按照大纲写作
 - 注意段落结构
 - 使用连接词
 - 控制字数（120-180词）
+:::
 
-### 📝 第四步：检查（5分钟）
-
+:::info 📝 第四步：检查（5分钟）
 **检查清单：**
 - [ ] 内容：是否切题、要点齐全
 - [ ] 语法：时态、主谓一致、单复数
 - [ ] 拼写：特别是常用词
 - [ ] 标点：逗号、句号、引号
 - [ ] 格式：分段、缩进（应用文格式）
+:::
 
 ---
 
@@ -149,22 +155,80 @@ import DifficultyBadge from '@site/src/components/DifficultyBadge';
 - **其次**：Second / Secondly / Furthermore / Moreover / In addition
 - **最后**：Finally / Lastly / Last but not least
 
+<ExampleSentence
+  en="First and foremost, education plays a vital role in personal development. Furthermore, it promotes social equality."
+  cn="首先，教育在个人发展中起着至关重要的作用。此外，它促进了社会平等。"
+  highlights={["First and foremost", "Furthermore"]}
+  note="使用顺序连接词串联两个论据，使文章结构清晰"
+/>
+
 ### 表示转折
 - **但是**：However / Nevertheless / Nonetheless / Yet
 - **相反**：On the contrary / In contrast / Conversely
 - **尽管**：Although / Though / Despite / In spite of
 
+<ExampleSentence
+  en="Online learning offers great flexibility. However, it lacks the face-to-face interaction that traditional classrooms provide."
+  cn="在线学习提供了很大的灵活性。然而，它缺乏传统课堂提供的面对面互动。"
+  highlights={["However"]}
+  note="However 放在句首，后接逗号，用于引出与前文相反的观点"
+/>
+
 ### 表示因果
 - **因为**：Because / Since / As / Due to / Owing to
 - **所以**：Therefore / Thus / Consequently / As a result / Hence
+
+<ExampleSentence
+  en="Due to the rapid development of technology, people's lifestyles have changed dramatically. As a result, traditional industries are facing new challenges."
+  cn="由于科技的快速发展，人们的生活方式发生了巨大变化。因此，传统行业正面临新的挑战。"
+  highlights={["Due to", "As a result"]}
+  note="Due to 表原因（后接名词短语），As a result 表结果"
+/>
 
 ### 表示举例
 - **例如**：For example / For instance / Such as / Like
 - **具体来说**：Specifically / In particular / Namely
 
+<ExampleSentence
+  en="Many countries have taken measures to protect the environment. For instance, China has invested heavily in renewable energy."
+  cn="许多国家已经采取措施保护环境。例如，中国在可再生能源方面投入了大量资金。"
+  highlights={["For instance"]}
+  note="For instance 后接具体的例子来支撑前面的观点"
+/>
+
 ### 表示总结
 - **总之**：In conclusion / To conclude / To sum up / In summary
 - **总的来说**：Overall / On the whole / All in all / In general
+
+<ExampleSentence
+  en="In conclusion, the advantages of studying abroad far outweigh the disadvantages. All in all, it is a worthwhile experience for personal growth."
+  cn="总之，出国留学的优点远远大于缺点。总的来说，这是一次值得的个人成长经历。"
+  highlights={["In conclusion", "All in all"]}
+  note="In conclusion 用于最后一段开头，All in all 用于进一步总结"
+/>
+
+### 🃏 连接词记忆卡
+
+<Flashcard
+  front="However"
+  back="adv. 然而；但是"
+  example="The plan sounds good. However, it may be difficult to implement."
+  exampleCn="这个计划听起来不错。然而，实施起来可能很困难。"
+/>
+
+<Flashcard
+  front="Therefore"
+  back="adv. 因此；所以"
+  example="He studied hard. Therefore, he passed the exam with flying colors."
+  exampleCn="他努力学习。因此，他以优异的成绩通过了考试。"
+/>
+
+<Flashcard
+  front="Furthermore"
+  back="adv. 此外；而且"
+  example="The project is cost-effective. Furthermore, it is environmentally friendly."
+  exampleCn="这个项目具有成本效益。此外，它还环保。"
+/>
 
 ---
 
@@ -195,4 +259,37 @@ import DifficultyBadge from '@site/src/components/DifficultyBadge';
 
 ---
 
-准备好了吗？从 [议论文写作](./argumentative-essays) 开始你的写作训练吧！
+## 写作知识测验
+
+<Quiz
+  type="multiple-choice"
+  question="四级写作的推荐字数范围是？"
+  options={["80-120词", "120-180词", "200-300词", "300-400词"]}
+  answer="120-180词"
+  explanation="四级写作要求 120-180 词。写得太少会扣分，写得太多则容易出错且浪费时间。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="以下哪个连接词用于「表示转折」？"
+  options={["Furthermore", "Therefore", "Nevertheless", "In addition"]}
+  answer="Nevertheless"
+  explanation="Nevertheless 意为「尽管如此、然而」，表示转折关系。Furthermore 和 In addition 表示递进，Therefore 表示因果。"
+/>
+
+<Quiz
+  type="fill-blank"
+  question="_____ conclusion, technology has brought more benefits than drawbacks to our lives.（填入表示总结的连接词）"
+  answer="In"
+  explanation="In conclusion 是最常见的总结连接词，用于作文最后一段开头，意为「总之」。"
+/>
+
+---
+
+## 开始学习
+
+准备好了吗？选择一个模块开始你的写作训练：
+
+- 📝 **[议论文写作](./argumentative-essays)** <DifficultyBadge level="B2" /> — 论点、论据、论证方法
+- 📧 **[应用文写作](./practical-writing)** <DifficultyBadge level="B1" /> — 书信、邮件、通知格式
+- 📊 **[图表描述写作](./graph-description)** <DifficultyBadge level="B2" /> — 数据趋势分析与描述

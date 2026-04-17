@@ -6,6 +6,8 @@ description: 掌握英语议论文的结构、论证方法和常用表达
 
 import DifficultyBadge from '@site/src/components/DifficultyBadge';
 import ExampleSentence from '@site/src/components/ExampleSentence';
+import Flashcard from '@site/src/components/Flashcard';
+import Quiz from '@site/src/components/Quiz';
 
 # 议论文写作 Argumentative Essays <DifficultyBadge level="B2" />
 
@@ -197,33 +199,45 @@ import ExampleSentence from '@site/src/components/ExampleSentence';
 
 ---
 
-## 四、常用连接词
+## 四、议论文高级表达
 
-### 表示顺序
-- First and foremost / To begin with / Initially
-- Secondly / Furthermore / Moreover / In addition
-- Finally / Lastly / Last but not least
+:::tip 基础连接词
+完整的连接词汇总请参阅 [写作概览 · 常用连接词](./intro#常用连接词)。以下补充议论文中常用的高级表达。
+:::
 
-### 表示转折
-- However / Nevertheless / Nonetheless
-- On the contrary / In contrast
-- Despite / In spite of / Although
+### 表达观点
 
-### 表示因果
-- Therefore / Thus / Consequently / As a result
-- Because / Since / As / Due to
-- Lead to / Result in / Contribute to
+<ExampleSentence
+  en="It is widely acknowledged that environmental protection requires collective effort."
+  cn="人们普遍认为环境保护需要集体努力。"
+  highlights={["It is widely acknowledged that"]}
+  note="高级句式：It is widely acknowledged/recognized/believed that..."
+/>
 
-### 表示举例
-- For example / For instance
-- Such as / Like / Including
-- Take... as an example
-- A case in point is...
+<ExampleSentence
+  en="There is a growing consensus that technology should serve humanity, not replace it."
+  cn="越来越多的人达成共识，科技应该服务于人类，而不是取代人类。"
+  highlights={["There is a growing consensus that"]}
+  note="表达共识：There is a growing consensus/awareness that..."
+/>
 
-### 表示总结
-- In conclusion / To conclude / To sum up
-- In summary / In brief / In short
-- All in all / On the whole / Overall
+### 让步与反驳
+
+<ExampleSentence
+  en="Admittedly, online learning has its limitations. Nevertheless, its benefits cannot be ignored."
+  cn="诚然，在线学习有其局限性。然而，它的好处不容忽视。"
+  highlights={["Admittedly", "Nevertheless"]}
+  note="让步句式：Admittedly / Granted / It is true that... + Nevertheless / However"
+/>
+
+### 强调与递进
+
+<ExampleSentence
+  en="Not only does reading improve vocabulary, but it also enhances critical thinking skills."
+  cn="阅读不仅能提高词汇量，还能增强批判性思维能力。"
+  highlights={["Not only does", "but it also"]}
+  note="倒装强调句：Not only does/do... but also..."
+/>
 
 ---
 
@@ -233,10 +247,7 @@ import ExampleSentence from '@site/src/components/ExampleSentence';
 
 **Should universities replace traditional classrooms with online learning?**
 
----
-
-**范文：**
-
+:::info 📖 范文
 In recent years, online learning has gained tremendous popularity, especially after the pandemic. While some people advocate for completely replacing traditional classrooms with online courses, I believe that a balanced approach combining both methods would be more beneficial.
 
 **First and foremost, online learning offers unparalleled flexibility and convenience.** Students can access course materials anytime and anywhere, which is particularly advantageous for those who have part-time jobs or family responsibilities. For instance, my friend Sarah, a working mother, successfully completed her master's degree through online courses while managing her career and family. This flexibility would have been impossible in a traditional classroom setting.
@@ -246,8 +257,7 @@ In recent years, online learning has gained tremendous popularity, especially af
 **However, traditional classrooms offer irreplaceable benefits that should not be overlooked.** Face-to-face interaction fosters deeper understanding and immediate feedback. Students can engage in spontaneous discussions, read body language, and build meaningful relationships with peers and professors. These social skills are crucial for personal development and future career success. Additionally, the structured environment of physical classrooms helps students maintain discipline and focus, which many find challenging in online settings.
 
 **In conclusion, rather than completely replacing one with the other, universities should adopt a hybrid model that leverages the strengths of both approaches.** Online learning provides flexibility and cost-effectiveness, while traditional classrooms offer essential social interaction and structured learning environments. By combining these methods, we can create a more comprehensive and effective educational system that meets diverse student needs.
-
----
+:::
 
 **范文分析：**
 
@@ -320,29 +330,67 @@ In recent years, online learning has gained tremendous popularity, especially af
 
 ---
 
-## 八、练习题目
+## 八、核心句型记忆卡
 
-### 题目 1：社交媒体
-**Do the advantages of social media outweigh the disadvantages?**
+<Flashcard
+  front="I firmly believe that..."
+  back="我坚定地认为……"
+  example="I firmly believe that education is the key to solving social problems."
+  exampleCn="我坚定地认为教育是解决社会问题的关键。"
+/>
 
-**提示：**
-- 优点：保持联系、信息传播、商业机会
-- 缺点：隐私问题、虚假信息、成瘾
+<Flashcard
+  front="First and foremost"
+  back="首先（最重要的是）"
+  example="First and foremost, regular exercise helps maintain physical health."
+  exampleCn="首先，定期锻炼有助于保持身体健康。"
+/>
 
-### 题目 2：兼职工作
-**Should college students take part-time jobs?**
-
-**提示：**
-- 支持：实践经验、经济独立、时间管理
-- 反对：影响学业、身心疲惫
-
-### 题目 3：环境保护
-**Who should be responsible for environmental protection: individuals or governments?**
-
-**提示：**
-- 个人：日常习惯、消费选择
-- 政府：政策法规、基础设施
+<Flashcard
+  front="In conclusion"
+  back="总之（用于末段开头）"
+  example="In conclusion, the benefits of reading far outweigh the time it requires."
+  exampleCn="总之，阅读的好处远远超过所需的时间。"
+/>
 
 ---
 
-**下一课**：[应用文写作](./practical-writing)
+## 九、实战练习
+
+<Quiz
+  type="multiple-choice"
+  question="以下哪种开头方式最适合议论文？"
+  options={["Once upon a time...", "In recent years, online shopping has become increasingly popular.", "I want to talk about shopping.", "Shopping is good."]}
+  answer="In recent years, online shopping has become increasingly popular."
+  explanation="议论文推荐使用'现象描述法'开头，引出话题。避免故事式开头和过于口语化的表达。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="议论文的 Thesis Statement 应该出现在哪里？"
+  options={["文章标题", "第一段末尾", "第二段开头", "最后一段"]}
+  answer="第一段末尾"
+  explanation="Thesis Statement（论点句）通常放在第一段末尾，在引入话题后明确表达自己的观点，便于读者快速理解文章立场。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="'Reading broadens our horizons. _____, by reading books about different cultures, we can understand the world from diverse perspectives.' 选择正确的连接词。"
+  options={["However", "Therefore", "For example", "In conclusion"]}
+  answer="For example"
+  explanation="后面的句子是对前面观点的举例说明，应使用表示举例的连接词 For example。"
+/>
+
+<Quiz
+  type="fill-blank"
+  question="Only by embracing these changes _____ we thrive in the digital age.（填入情态动词）"
+  answer="can"
+  explanation="这是一个 Only by... 引导的倒装句，是议论文常用的升华句式。Only + 状语放句首时，主句需要部分倒装。"
+/>
+
+---
+
+**继续学习**：
+- 📧 [应用文写作](./practical-writing) <DifficultyBadge level="B1" /> — 书信、邮件、通知格式
+- 📊 [图表描述写作](./graph-description) <DifficultyBadge level="B2" /> — 数据趋势分析与描述
+- ← [写作概览](./intro) — 回到写作模块首页
