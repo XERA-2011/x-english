@@ -1,4 +1,4 @@
-# X-English 🇬🇧
+# X-English
 
 X-English 是一个基于 Docusaurus 构建的现代化、系统化的英语学习平台。项目支持纯前端本地化运行。
 
