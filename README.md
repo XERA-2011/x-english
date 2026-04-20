@@ -65,6 +65,8 @@ pnpm run clean
 
 Cloudflare / Vercel 作为可选分发渠道，按需接入（不作为主门禁）。
 
+Vercel 使用仓库内 `vercel.json` 统一构建与路由行为（`cleanUrls: true`），避免文档路由在刷新时出现短暂 404。
+
 如需手动发布到 Cloudflare，可使用：
 
 ```bash
