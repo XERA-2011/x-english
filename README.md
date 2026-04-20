@@ -45,16 +45,27 @@ pnpm run lint
 
 # TypeScript 类型检查
 pnpm run typecheck
+
+# 内容质量检查（标题与本地链接）
+pnpm run check:content
+
+# CI 全量检查
+pnpm run ci
+
+# 清理构建/缓存产物
+pnpm run clean
 ```
 
 ## 部署说明
 
-项目支持多平台自动部署：
+当前仓库的**主发布链路**为 GitHub Pages：
 
-- GitHub Actions：见 `.github/workflows/deploy.yml`
-- Cloudflare Pages / Vercel：连接仓库后可自动构建发布
+- PR / Push 质量门禁：`.github/workflows/ci.yml`
+- 主分支发布：`.github/workflows/deploy.yml`
 
-如需手动 Cloudflare 发布，可使用：
+Cloudflare / Vercel 作为可选分发渠道，按需接入（不作为主门禁）。
+
+如需手动发布到 Cloudflare，可使用：
 
 ```bash
 pnpm run deploy
