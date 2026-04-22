@@ -37,7 +37,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/xera-2011/x-english/tree/main/',
         },
         blog: false,
         theme: {
