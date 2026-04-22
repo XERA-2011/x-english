@@ -95,6 +95,7 @@ export default function WritingCheckin(): React.ReactNode {
   const [text, setText] = useState('');
   const [records, setRecords] = useState<CheckinRecord[]>([]);
   const [posterUrl, setPosterUrl] = useState<string | null>(null);
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'error'>('idle');
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -262,11 +263,13 @@ export default function WritingCheckin(): React.ReactNode {
             'image/png': blob,
           }),
         ]);
-        alert('✅ 图片已成功复制到剪贴板，可以直接粘贴分享啦！');
+        setCopyStatus('copied');
+        setTimeout(() => setCopyStatus('idle'), 2000);
       }, 'image/png');
     } catch (err) {
       console.error('Failed to copy: ', err);
-      alert('❌ 复制失败，您的浏览器可能不支持直接复制图片，请使用"保存图片"功能。');
+      setCopyStatus('error');
+      setTimeout(() => setCopyStatus('idle'), 3000);
     }
   };
 
@@ -378,8 +381,12 @@ export default function WritingCheckin(): React.ReactNode {
 
           <div className={styles.previewActions}>
             <div className={styles.actionButtons}>
-              <button className={styles.copyBtn} onClick={handleCopyImage} disabled={!posterUrl}>
-                📋 复制图片
+              <button 
+                className={`${styles.copyBtn} ${copyStatus === 'copied' ? styles.copySuccess : ''} ${copyStatus === 'error' ? styles.copyError : ''}`} 
+                onClick={handleCopyImage} 
+                disabled={!posterUrl || copyStatus !== 'idle'}
+              >
+                {copyStatus === 'copied' ? '✅ 已复制' : copyStatus === 'error' ? '❌ 复制失败' : '📋 复制图片'}
               </button>
               <button className={styles.downloadBtn} onClick={handleDownload} disabled={!posterUrl}>
                 ⬇️ 保存图片

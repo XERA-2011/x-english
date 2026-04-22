@@ -316,7 +316,19 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.copyBtn:disabled,
+.copyBtn.copySuccess {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success);
+  border-color: var(--ifm-color-success);
+}
+
+.copyBtn.copyError {
+  background: var(--ifm-color-danger-contrast-background);
+  color: var(--ifm-color-danger);
+  border-color: var(--ifm-color-danger);
+}
+
+.copyBtn:disabled:not(.copySuccess):not(.copyError),
 .downloadBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
