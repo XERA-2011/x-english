@@ -215,8 +215,8 @@
 
 .templateContent {
   margin: 0;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.95rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
   line-height: 1.6;
   color: var(--xe-text-secondary);
   white-space: pre-wrap;
