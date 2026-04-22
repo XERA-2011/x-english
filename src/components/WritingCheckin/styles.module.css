@@ -223,6 +223,15 @@
   word-wrap: break-word;
 }
 
+.highlightText {
+  color: var(--ifm-color-primary-dark);
+  background-color: var(--ifm-color-primary-lightest);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin: 0 2px;
+}
+
 /* ── Preview View ── */
 .previewHeader {
   display: flex;
