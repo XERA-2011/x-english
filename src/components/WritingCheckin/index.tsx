@@ -441,10 +441,10 @@ export default function WritingCheckin(): React.ReactNode {
                 onClick={handleCopyImage} 
                 disabled={!posterUrl || copyStatus !== 'idle'}
               >
-                {copyStatus === 'copied' ? '✅ 已复制' : copyStatus === 'error' ? '❌ 复制失败' : '📋 复制图片'}
+                {copyStatus === 'copied' ? '已复制' : copyStatus === 'error' ? '复制失败' : '复制图片'}
               </button>
               <button className={styles.downloadBtn} onClick={handleDownload} disabled={!posterUrl}>
-                ⬇️ 保存图片
+                保存图片
               </button>
             </div>
             <p className={styles.shareHint}>复制或保存图片后，可分享至社交媒体打卡</p>
