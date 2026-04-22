@@ -32,7 +32,7 @@ const CATEGORIES: WritingCategory[] = [
       { id: 'pet3-suggestion', label: '建议信', emoji: '💡', prompt: '写一封建议信。回应对方的咨询，提出具体的建议。', targetWords: 100, template: '**Dear Peter,**\n\n**I\'m glad to receive your letter asking for my advice on how to** learn Chinese well.\n\n**Here are a few suggestions. First, it is important to** take a Chinese course, **as you\'ll be able to** learn from the teacher and practice with your fellow students. **Then, it also helps to** watch TV and read books, newspapers and magazines in Chinese whenever possible.\n\n**Besides, it is a good idea to** learn and sing Chinese songs, **because by doing so you\'ll** learn and remember Chinese words more easily. **You can also** make more Chinese friends. They will tell you a lot about China and help you learn Chinese.\n\n**Try and write me in** Chinese **next time.**\n\n**Best wishes,**\nLi Ming' },
       { id: 'pet3-job', label: '求职信', emoji: '💼', prompt: '写一封求职信。说明应聘职位、个人优势及面试请求。', targetWords: 100, template: '**Dear Sirs,**\n\n**In reply to your advertisement in today\'s** China Daily, **I am now writing to apply for the position of** sales manager.\n\nI am a male, currently 24 years old. I graduated from Peking University and majored in international trade. At college, I have passed CET-6. **Besides, I joined various kinds of social activities and organizations in my spare time, which have greatly developed my ability of dealing with complicated situations. I am confident and enthusiastic, so I believe that my personal qualities will allow me to make a valuable contribution to your company.**\n\n**I enclose my curriculum vitae; I hope I can get an opportunity for a personal interview at any time. Thank you for your consideration.**\n\n**Sincerely yours,**\nLiu Jun' },
       { id: 'pet3-note', label: '便条', emoji: '📝', prompt: '写一则便条。说明核心事由，请求对方协助或留下提醒事项。', targetWords: 100, template: '**Mrs** Wilson,\n\n**I’m going out** shopping, **and won’t be back until about** 5:00 pm. **I have taken with me** the two books you asked me to return to the City Library.\n\n**At about** 1 o’clock this afternoon, Tracy **called, saying that she couldn’t meet you at** Bolton Coffee **tomorrow morning as she has something important to attend to. She felt very sorry about that, but said that you could set some other time for the meeting.**\n\n**She wanted you to call her back as soon as you are home. She has already told** Susan **about this change. Have a good afternoon.**\n\nLi Hua' },
-      { id: 'pet3-notice', label: '通知', emoji: '📋', prompt: '写一则通知。说明活动时间、地点、内容及注意事项。', targetWords: 100, template: '                           **NOTICE**\n\n**The Student Union is pleased to announce that** an English Speech Contest **will be held in the school auditorium on next Friday, May 15th, from 2:00 p.m. to 5:00 p.m.**\n\n**The purpose of this contest is to** improve students\' spoken English and provide a stage to show their language talent. **The topic of the speech is** "My Dream in the Future", **and each participant will have 3 to 5 minutes to deliver their speech.**\n\n**Those who are interested are invited to sign up at** the Student Union office **before this Wednesday. Please note that all participants should prepare their own materials. The top three winners will receive special prizes and certificates.**\n\n**We look forward to your active participation.**\n\n                                         **The Student Union**\n                                         **May 10th**' },
+      { id: 'pet3-notice', label: '通知', emoji: '📋', prompt: '写一则通知。说明活动时间、地点、内容及注意事项。', targetWords: 100, template: '[center]**NOTICE**[/center]\n\n**The Student Union is pleased to announce that** an English Speech Contest **will be held in the school auditorium on next Friday, May 15th, from 2:00 p.m. to 5:00 p.m.**\n\n**The purpose of this contest is to** improve students\' spoken English and provide a stage to show their language talent. **The topic of the speech is** "My Dream in the Future", **and each participant will have 3 to 5 minutes to deliver their speech.**\n\n**Those who are interested are invited to sign up at** the Student Union office **before this Wednesday. Please note that all participants should prepare their own materials. The top three winners will receive special prizes and certificates.**\n\n**We look forward to your active participation.**\n\n[right]**The Student Union**[/right]\n[right]**May 10th**[/right]' },
     ],
   },
   {
@@ -275,17 +275,42 @@ export default function WritingCheckin(): React.ReactNode {
 
   const renderTemplate = (text?: string) => {
     if (!text) return null;
-    // Split by **text**
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return (
-          <strong key={index} className={styles.highlightText}>
-            {part.slice(2, -2)}
-          </strong>
-        );
+    const lines = text.split('\n');
+    return lines.map((line, i) => {
+      let align: 'left' | 'center' | 'right' = 'left';
+      let content = line.trim();
+      
+      if (!content) {
+        return <div key={i} style={{ minHeight: '1.6em' }}></div>;
       }
-      return <span key={index}>{part}</span>;
+
+      if (content.startsWith('[center]') && content.endsWith('[/center]')) {
+        align = 'center';
+        content = content.slice(8, -9).trim();
+      } else if (content.startsWith('[right]') && content.endsWith('[/right]')) {
+        align = 'right';
+        content = content.slice(7, -8).trim();
+      } else {
+        content = line; 
+      }
+
+      const parts = content.split(/(\*\*.*?\*\*)/g);
+      const renderedContent = parts.map((part, j) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return (
+            <strong key={j} className={styles.highlightText}>
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return <span key={j}>{part}</span>;
+      });
+
+      return (
+        <div key={i} style={{ textAlign: align }}>
+          {renderedContent}
+        </div>
+      );
     });
   };
 
