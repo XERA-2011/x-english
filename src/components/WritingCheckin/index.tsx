@@ -252,6 +252,24 @@ export default function WritingCheckin(): React.ReactNode {
     document.body.removeChild(a);
   };
 
+  const handleCopyImage = async () => {
+    if (!canvasRef.current) return;
+    try {
+      canvasRef.current.toBlob(async (blob) => {
+        if (!blob) return;
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'image/png': blob,
+          }),
+        ]);
+        alert('✅ 图片已成功复制到剪贴板，可以直接粘贴分享啦！');
+      }, 'image/png');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+      alert('❌ 复制失败，您的浏览器可能不支持直接复制图片，请使用"保存图片"功能。');
+    }
+  };
+
   const todayCount = records.filter(r => r.date === getToday()).length;
   const totalCount = records.length;
 
@@ -359,10 +377,15 @@ export default function WritingCheckin(): React.ReactNode {
           </div>
 
           <div className={styles.previewActions}>
-            <button className={styles.downloadBtn} onClick={handleDownload} disabled={!posterUrl}>
-              ⬇️ 保存图片
-            </button>
-            <p className={styles.shareHint}>保存图片后可分享至社交媒体打卡</p>
+            <div className={styles.actionButtons}>
+              <button className={styles.copyBtn} onClick={handleCopyImage} disabled={!posterUrl}>
+                📋 复制图片
+              </button>
+              <button className={styles.downloadBtn} onClick={handleDownload} disabled={!posterUrl}>
+                ⬇️ 保存图片
+              </button>
+            </div>
+            <p className={styles.shareHint}>复制或保存图片后，可分享至社交媒体打卡</p>
           </div>
         </div>
       )}

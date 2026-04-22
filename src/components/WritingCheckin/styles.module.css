@@ -272,9 +272,13 @@
   gap: 0.75rem;
 }
 
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.copyBtn,
 .downloadBtn {
-  background: var(--ifm-color-primary);
-  color: #fff;
   border: none;
   padding: 0.85rem 2rem;
   border-radius: 999px;
@@ -287,12 +291,32 @@
   gap: 0.5rem;
 }
 
+.downloadBtn {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
 .downloadBtn:hover:not(:disabled) {
   background: var(--ifm-color-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(24, 226, 153, 0.3);
 }
 
+.copyBtn {
+  background: var(--xe-surface-raised);
+  color: var(--xe-text);
+  border: 1px solid var(--xe-border-stronger);
+}
+
+.copyBtn:hover:not(:disabled) {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.copyBtn:disabled,
 .downloadBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
