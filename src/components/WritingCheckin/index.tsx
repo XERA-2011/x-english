@@ -9,6 +9,7 @@ interface WritingTopic {
   emoji: string;
   prompt: string;
   targetWords: [number, number] | number;
+  template?: string;
 }
 
 interface WritingCategory {
@@ -22,16 +23,16 @@ const CATEGORIES: WritingCategory[] = [
     title: 'PET3 A节 · 应用文',
     emoji: '📮',
     topics: [
-      { id: 'pet3-apology', label: '道歉信', emoji: '🙏', prompt: '写一封道歉信。说明道歉原因，表达歉意，并提出补救措施。', targetWords: 100 },
-      { id: 'pet3-invitation', label: '邀请信', emoji: '💌', prompt: '写一封邀请信。说明活动内容、时间、地点，并表达期待。', targetWords: 100 },
-      { id: 'pet3-gratitude', label: '感谢信', emoji: '🌸', prompt: '写一封感谢信。说明感谢的原因和具体帮助，再次表达谢意。', targetWords: 100 },
+      { id: 'pet3-apology', label: '道歉信', emoji: '🙏', prompt: '写一封道歉信。说明道歉原因，表达歉意，并提出补救措施。', targetWords: 100, template: 'Dear ______,\n\nI am writing to apologize for ______（道歉原因）.\nI am terribly sorry for the inconvenience this has caused you.\nI hope you can understand my situation and accept my sincere apology.\n\nPlease allow me to make up for this matter by ______（补救措施）.\nThank you for your understanding.\n\nYours sincerely,\nLi Ming' },
+      { id: 'pet3-invitation', label: '邀请信', emoji: '💌', prompt: '写一封邀请信。说明活动内容、时间、地点，并表达期待。', targetWords: 100, template: 'Dear ______,\n\nI am very glad to invite you to ______（活动）.\nThe event will be held at ______（地点） on ______（时间）.\nWe believe it will be a great chance for you to ______（活动意义）.\n\nYour presence would be a great honor to us.\nPlease let me know whether you can come.\n\nYours sincerely,\nLi Ming' },
+      { id: 'pet3-gratitude', label: '感谢信', emoji: '🌸', prompt: '写一封感谢信。说明感谢的原因和具体帮助，再次表达谢意。', targetWords: 100, template: 'Dear ______,\n\nI am writing to express my sincere gratitude for ______（感谢原因）.\nWithout your help in ______（具体帮助）, I could not have ______（结果）.\n\nThank you again for your kindness and support.\nPlease accept my heartfelt thanks and best wishes.\n\nYours sincerely,\nLi Ming' },
       { id: 'pet3-request', label: '请求信', emoji: '📩', prompt: '写一封请求信。正式提出请求，说明原因，并表达感谢。', targetWords: 100 },
       { id: 'pet3-complaint', label: '投诉信', emoji: '📢', prompt: '写一封投诉信。说明投诉对象、具体问题及影响，并提出期望的解决方案。', targetWords: 100 },
       { id: 'pet3-inquiry', label: '询问信', emoji: '❓', prompt: '写一封询问信。自我介绍，说明咨询内容，列出具体问题。', targetWords: 100 },
       { id: 'pet3-suggestion', label: '建议信', emoji: '💡', prompt: '写一封建议信。回应对方的咨询，提出具体的建议。', targetWords: 100 },
       { id: 'pet3-job', label: '求职信', emoji: '💼', prompt: '写一封求职信。说明应聘职位、个人优势及面试请求。', targetWords: 100 },
-      { id: 'pet3-note', label: '便条', emoji: '📝', prompt: '写一则便条。说明核心事由，请求对方协助或留下提醒事项。', targetWords: 100 },
-      { id: 'pet3-notice', label: '通知', emoji: '📋', prompt: '写一则通知。说明活动时间、地点、内容及注意事项。', targetWords: 100 },
+      { id: 'pet3-note', label: '便条', emoji: '📝', prompt: '写一则便条。说明核心事由，请求对方协助或留下提醒事项。', targetWords: 100, template: 'To: ______（收件人姓名）\nFrom: ______（发件人姓名）\nDate: ______（日期）\n\nI am writing this note to let you know that ______（核心事由）.\n\nI will not be available / back until ______（可联系时间）.\nIn the meantime, could you please ______（协助事项）?\n\nSorry for any inconvenience this may cause.' },
+      { id: 'pet3-notice', label: '通知', emoji: '📋', prompt: '写一则通知。说明活动时间、地点、内容及注意事项。', targetWords: 100, template: '                           NOTICE\n\n______（单位）is pleased to announce that ______（活动）\nwill be held on ______（日期） at ______（地点）.\n\nThe event / activity will start at ______ and end at ______.\n\nThose who are interested are invited to sign up at ______\nbefore ______. Please note that ______（注意事项）.\n\nWe look forward to your active participation.\n\n                                             ______（落款单位）\n                                             ______（日期）' },
     ],
   },
   {
@@ -326,6 +327,13 @@ export default function WritingCheckin(): React.ReactNode {
               生成打卡海报
             </button>
           </div>
+
+          {selectedTopic.template && (
+            <div className={styles.templateBox}>
+              <h4 className={styles.templateTitle}>📝 写作模板参考</h4>
+              <pre className={styles.templateContent}>{selectedTopic.template}</pre>
+            </div>
+          )}
         </div>
       )}
 

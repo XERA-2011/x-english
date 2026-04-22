@@ -198,6 +198,31 @@
   cursor: not-allowed;
 }
 
+.templateBox {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--xe-surface-raised);
+  border: 1px dashed var(--xe-border-stronger);
+  border-radius: 8px;
+}
+
+.templateTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: var(--xe-text);
+  font-weight: 600;
+}
+
+.templateContent {
+  margin: 0;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--xe-text-secondary);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 /* ── Preview View ── */
 .previewHeader {
   display: flex;
