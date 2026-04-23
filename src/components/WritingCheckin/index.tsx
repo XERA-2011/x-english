@@ -175,11 +175,11 @@ export default function WritingCheckin(): React.ReactNode {
 
     ctx.fillStyle = '#18E299'; // Primary color
     ctx.font = 'bold 44px Inter, "Noto Sans SC", sans-serif';
-    ctx.fillText('🔥 X-English 写作打卡', 50, 75);
+    ctx.fillText('X-English 写作打卡', 50, 75);
 
     ctx.fillStyle = '#666666';
     ctx.font = '28px Inter, "Noto Sans SC", sans-serif';
-    ctx.fillText(`坚持写作，每天进步一点点 ✨`, 50, 125);
+    ctx.fillText(`坚持写作，每天进步一点点`, 50, 125);
 
     // 3. Draw Topic Info
     ctx.font = 'bold 36px Inter, "Noto Sans SC", sans-serif';
