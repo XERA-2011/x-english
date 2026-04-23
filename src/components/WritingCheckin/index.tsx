@@ -110,7 +110,7 @@ export default function WritingCheckin(): React.ReactNode {
   };
 
   const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
-  
+
   const getWordCountText = (topic: WritingTopic) => {
     if (Array.isArray(topic.targetWords)) {
       return `${topic.targetWords[0]}-${topic.targetWords[1]} 词`;
@@ -127,12 +127,12 @@ export default function WritingCheckin(): React.ReactNode {
     // Fixed width, dynamic height
     const width = 750;
     const dpr = window.devicePixelRatio || 2;
-    
+
     // Preparation pass to determine text height
     ctx.font = '32px Inter, "Noto Sans SC", sans-serif';
     const paragraphs = text.split('\n');
     const allLines: string[] = [];
-    
+
     paragraphs.forEach(p => {
       if (p.trim() === '') {
         allLines.push('');
@@ -161,7 +161,7 @@ export default function WritingCheckin(): React.ReactNode {
     // Set actual canvas size
     canvas.width = width * dpr;
     canvas.height = height * dpr;
-    
+
     // Scale context to ensure crisp rendering
     ctx.scale(dpr, dpr);
 
@@ -172,7 +172,7 @@ export default function WritingCheckin(): React.ReactNode {
     // 2. Draw Header Area
     ctx.fillStyle = '#f8f9fa';
     ctx.fillRect(0, 0, width, 160);
-    
+
     ctx.fillStyle = '#18E299'; // Primary color
     ctx.font = 'bold 44px Inter, "Noto Sans SC", sans-serif';
     ctx.fillText('🔥 X-English 写作打卡', 50, 75);
@@ -185,7 +185,7 @@ export default function WritingCheckin(): React.ReactNode {
     ctx.font = 'bold 36px Inter, "Noto Sans SC", sans-serif';
     ctx.fillStyle = '#0d0d0d';
     ctx.fillText(`${selectedTopic.emoji} ${selectedTopic.label}`, 50, 220);
-    
+
     const wc = text.trim() ? text.trim().split(/\s+/).length : 0;
     ctx.font = '28px Inter, "Noto Sans SC", sans-serif';
     ctx.fillStyle = '#888888';
@@ -217,7 +217,7 @@ export default function WritingCheckin(): React.ReactNode {
 
     ctx.fillStyle = '#aaaaaa';
     ctx.font = '24px Inter, "Noto Sans SC", sans-serif';
-    ctx.fillText('扫描/访问 x-english.pages.dev 获取更多英语资料', 50, height - 40);
+    ctx.fillText('访问 x-english.pages.dev 获取更多英语资料', 50, height - 40);
 
     // Convert to image
     const dataUrl = canvas.toDataURL('image/png');
@@ -227,7 +227,7 @@ export default function WritingCheckin(): React.ReactNode {
 
   const handleGenerateClick = () => {
     if (!selectedTopic || !text.trim()) return;
-    
+
     // Save record
     const newRecord: CheckinRecord = {
       id: Date.now().toString(),
@@ -280,7 +280,7 @@ export default function WritingCheckin(): React.ReactNode {
     return lines.map((line, i) => {
       let align: 'left' | 'center' | 'right' = 'left';
       let content = line.trim();
-      
+
       if (!content) {
         return <div key={i} style={{ minHeight: '1.6em' }}></div>;
       }
@@ -292,7 +292,7 @@ export default function WritingCheckin(): React.ReactNode {
         align = 'right';
         content = content.slice(7, -8).trim();
       } else {
-        content = line; 
+        content = line;
       }
 
       const parts = content.split(/(\*\*.*?\*\*)/g);
@@ -329,7 +329,7 @@ export default function WritingCheckin(): React.ReactNode {
               <p className={styles.subtitle}>选择一个类型开始今天的练习。你已累计打卡 {totalCount} 次，今日打卡 {todayCount} 次。</p>
             </div>
           </div>
-          
+
           <div className={styles.categories}>
             {CATEGORIES.map(cat => (
               <div key={cat.title} className={styles.category}>
@@ -382,8 +382,8 @@ export default function WritingCheckin(): React.ReactNode {
 
           <div className={styles.writeFooter}>
             <span className={styles.wordCount}>当前字数：<strong>{wordCount}</strong></span>
-            <button 
-              className={styles.generateBtn} 
+            <button
+              className={styles.generateBtn}
               onClick={handleGenerateClick}
               disabled={wordCount === 0}
             >
@@ -399,7 +399,7 @@ export default function WritingCheckin(): React.ReactNode {
               <div className={styles.templateContent}>
                 {renderTemplate(selectedTopic.template)}
               </div>
-              
+
               {selectedTopic.translation && (
                 <div className={styles.translationContent}>
                   <hr className={styles.translationDivider} />
@@ -426,7 +426,7 @@ export default function WritingCheckin(): React.ReactNode {
           <div className={styles.posterContainer}>
             {/* Hidden canvas used for drawing */}
             <canvas ref={canvasRef} style={{ display: 'none' }} />
-            
+
             {posterUrl ? (
               <img src={posterUrl} alt="写作打卡海报" className={styles.posterImage} />
             ) : (
@@ -436,9 +436,9 @@ export default function WritingCheckin(): React.ReactNode {
 
           <div className={styles.previewActions}>
             <div className={styles.actionButtons}>
-              <button 
-                className={`${styles.copyBtn} ${copyStatus === 'copied' ? styles.copySuccess : ''} ${copyStatus === 'error' ? styles.copyError : ''}`} 
-                onClick={handleCopyImage} 
+              <button
+                className={`${styles.copyBtn} ${copyStatus === 'copied' ? styles.copySuccess : ''} ${copyStatus === 'error' ? styles.copyError : ''}`}
+                onClick={handleCopyImage}
                 disabled={!posterUrl || copyStatus !== 'idle'}
               >
                 {copyStatus === 'copied' ? '已复制' : copyStatus === 'error' ? '复制失败' : '复制图片'}
