@@ -8,17 +8,9 @@ import DifficultyBadge from '@site/src/components/DifficultyBadge';
 import AudioPlayer from '@site/src/components/AudioPlayer';
 import Quiz from '@site/src/components/Quiz';
 
-
 # 短对话理解 Short Conversations <DifficultyBadge level="B1" />
 
-## 一、核心场景与词汇
-
-### 1. 校园生活 Campus Life
-
-**高频词汇：**
-- assignment（作业）、deadline（截止日期）、extension（延期）
-- library（图书馆）、dormitory（宿舍）、cafeteria（食堂）
-- professor（教授）、lecture（讲座）、seminar（研讨会）
+## 1. 校园生活 Campus Life
 
 <AudioPlayer 
   src="/audio/listening/conversation-01.mp3"
@@ -64,12 +56,29 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：extension until Friday（延期到周五）, absolute deadline（最后期限）。"
 />
 
-### 2. 日常交际 Daily Communication
+<AudioPlayer 
+  src="/audio/listening/conversation-08.mp3"
+  transcript={`
+**W:** Your essay shows good research, but you need to work on your conclusion.
+**M:** Thank you, Professor. I'll revise it and submit it again next week.
+**Q:** What's the probable relationship between the speakers?
+  `}
+/>
 
-**高频词汇：**
-- appointment（预约）、cancel（取消）、postpone（推迟）
-- available（有空的）、busy（忙碌的）、convenient（方便的）
-- invitation（邀请）、accept（接受）、decline（拒绝）
+<Quiz
+  type="multiple-choice"
+  question="What's the probable relationship between the speakers?"
+  options={[
+    "Classmates",
+    "Teacher and student",
+    "Colleagues",
+    "Friends"
+  ]}
+  answer="Teacher and student"
+  explanation="关键词：essay（论文）、Professor（教授）、revise（修改）、submit（提交）。"
+/>
+
+## 2. 日常交际 Daily Communication
 
 <AudioPlayer 
   src="/audio/listening/conversation-03.mp3"
@@ -93,12 +102,55 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：I'd love to, but...（委婉拒绝），How about this weekend?（建议周末）。"
 />
 
-### 3. 服务场所 Service Places
+## 3. 购物与消费 Shopping
 
-**高频词汇：**
-- restaurant（餐厅）、reservation（预订）、menu（菜单）
-- hotel（酒店）、check in/out（入住/退房）、reception（前台）
-- repair（维修）、fix（修理）、replace（更换）
+<AudioPlayer 
+  src="/audio/listening/conversation-05.mp3"
+  transcript={`
+**W:** Excuse me, do you have this shirt in a medium?
+**M:** Let me check the back room... I'm sorry, we only have large and small left in that color.
+**Q:** What is the woman's problem?
+  `}
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="What is the woman's problem?"
+  options={[
+    "She cannot find the fitting room",
+    "She wants a different color",
+    "The store doesn't have her size",
+    "The shirt is too expensive"
+  ]}
+  answer="The store doesn't have her size"
+  explanation="关键词：in a medium（中号）, only have large and small left（只剩大号和小号）。"
+/>
+
+## 4. 医疗与健康 Health & Medical
+
+<AudioPlayer 
+  src="/audio/listening/conversation-06.mp3"
+  transcript={`
+**M:** How often should I take this medicine, doctor?
+**W:** Take two pills every four hours, and make sure to drink plenty of water.
+**Q:** What is the man advised to do?
+  `}
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="What is the man advised to do?"
+  options={[
+    "Take four pills every day",
+    "Drink plenty of water",
+    "Come back in two hours",
+    "Stop taking the medicine"
+  ]}
+  answer="Drink plenty of water"
+  explanation="关键词：Take two pills every four hours（每四小时吃两片）, drink plenty of water（多喝水）。"
+/>
+
+## 5. 服务与场所 Service Places
 
 <AudioPlayer 
   src="/audio/listening/conversation-04.mp3"
@@ -123,8 +175,6 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：all tables are taken（客满）, 20-minute wait（等20分钟）。"
 />
 
-## 二、实战练习
-
 <AudioPlayer 
   src="/audio/listening/conversation-07.mp3"
   transcript={`
@@ -140,28 +190,6 @@ import Quiz from '@site/src/components/Quiz';
   options={["At a post office", "At a bank", "At a hotel", "At a library"]}
   answer="At a bank"
   explanation="关键词：deposit（存款）、check（支票）、withdraw（取款）、ID（身份证）。"
-/>
-
-<AudioPlayer 
-  src="/audio/listening/conversation-08.mp3"
-  transcript={`
-**W:** Your essay shows good research, but you need to work on your conclusion.
-**M:** Thank you, Professor. I'll revise it and submit it again next week.
-**Q:** What's the probable relationship between the speakers?
-  `}
-/>
-
-<Quiz
-  type="multiple-choice"
-  question="What's the probable relationship between the speakers?"
-  options={[
-    "Classmates",
-    "Teacher and student",
-    "Colleagues",
-    "Friends"
-  ]}
-  answer="Teacher and student"
-  explanation="关键词：essay（论文）、Professor（教授）、revise（修改）、submit（提交）。"
 />
 
 ---

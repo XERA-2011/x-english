@@ -10,9 +10,7 @@ import Quiz from '@site/src/components/Quiz';
 
 # 长对话理解 Long Conversations <DifficultyBadge level="B1" />
 
-## 一、核心主题与实战
-
-### 1. 学术讨论 Academic Discussion
+## 1. 学术讨论 Academic Discussion
 
 <AudioPlayer 
   src="/audio/listening/long-conv-01.mp3"
@@ -69,7 +67,7 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：let's meet next Wednesday（下周三见）。"
 />
 
-### 2. 工作面试 Job Interview
+## 2. 工作面试 Job Interview
 
 <AudioPlayer 
   src="/audio/listening/long-conv-02.mp3"
@@ -120,7 +118,7 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：visiting clients about once a month。"
 />
 
-### 3. 旅行计划 Travel Planning
+## 3. 旅行计划 Travel Planning
 
 <AudioPlayer 
   src="/audio/listening/long-conv-03.mp3"
@@ -161,15 +159,61 @@ import Quiz from '@site/src/components/Quiz';
   explanation="关键词：roughly $290 total（住宿$240 + 油费$50）。"
 />
 
-## 二、高频表达
+## 4. 新闻采访 News Interview
 
-### 表示同意 / 反对
-- I couldn't agree more. (完全同意) / I see it differently. (看法不同)
-- That makes sense. (有道理) / That's not necessarily true. (不一定)
+<AudioPlayer 
+  src="/audio/listening/long-conv-04.mp3"
+  transcript={`
+**Journalist:** Today we have Dr. Miller, an expert on urban development. Dr. Miller, many people are concerned about the increasing traffic in our city. What's the main cause?
+**Dr. Miller:** Well, the rapid population growth is certainly a factor, but the core issue is our outdated public transportation system. It simply hasn't kept up with the city's expansion.
+**Journalist:** Are there any immediate plans to solve this?
+**Dr. Miller:** The city council has just approved a new budget to expand the subway lines. This project will start next spring and is expected to take three years to complete.
+**Journalist:** Three years is a long time. What can commuters do in the meantime?
+**Dr. Miller:** We are encouraging companies to adopt flexible working hours. If people don't all travel during the peak hours of 8 AM and 5 PM, it will significantly reduce congestion. Also, carpooling programs are being subsidized.
+**Journalist:** Do you think these short-term measures will be effective?
+**Dr. Miller:** They won't solve the problem entirely, but our studies show they could reduce traffic by up to 20% if widely adopted. 
+**Journalist:** Thank you, Dr. Miller, for your insights.
+  `}
+/>
 
-### 表示建议 / 犹豫
-- Why don't you...? (为什么不...) / I'm not sure... (我不确定...)
-- It might be a good idea to... (也许...是个好主意) / Let me think about it. (让我想想)
+<Quiz
+  type="multiple-choice"
+  question="According to Dr. Miller, what is the core issue of the traffic problem?"
+  options={[
+    "Too many private cars",
+    "Rapid population growth",
+    "Outdated public transportation",
+    "Poor road maintenance"
+  ]}
+  answer="Outdated public transportation"
+  explanation="关键词：the core issue is our outdated public transportation system（核心问题是过时的公共交通系统）。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="When will the subway expansion project begin?"
+  options={[
+    "Next week",
+    "Next month",
+    "Next spring",
+    "In three years"
+  ]}
+  answer="Next spring"
+  explanation="关键词：start next spring（明年春天开始）。"
+/>
+
+<Quiz
+  type="multiple-choice"
+  question="What is one of the suggested short-term solutions?"
+  options={[
+    "Building more roads",
+    "Adopting flexible working hours",
+    "Banning cars in the city center",
+    "Increasing parking fees"
+  ]}
+  answer="Adopting flexible working hours"
+  explanation="关键词：encouraging companies to adopt flexible working hours（鼓励公司采用弹性工作制）。"
+/>
 
 ---
 
