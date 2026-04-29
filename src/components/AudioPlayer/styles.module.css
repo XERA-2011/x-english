@@ -1,3 +1,7 @@
+.wrapper {
+  margin: 0.75rem 0;
+}
+
 .player {
   display: flex;
   align-items: center;
@@ -6,15 +10,14 @@
   background: var(--ifm-background-surface-color, #f8f9fa);
   border: 1px solid var(--ifm-color-emphasis-200, #dee2e6);
   border-radius: 12px;
-  margin: 0.75rem 0;
   transition: box-shadow 0.2s ease;
+  flex-wrap: wrap;
 }
 
 .player:hover {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Dark mode */
 [data-theme='dark'] .player {
   background: var(--ifm-background-surface-color, #1e1e1e);
   border-color: var(--ifm-color-emphasis-300, #444);
@@ -140,4 +143,74 @@
   border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   background: var(--ifm-color-primary-lightest, rgba(37, 194, 160, 0.08));
+}
+
+/* ---- Transcript toggle button ---- */
+.transcriptBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--ifm-color-emphasis-300, #ccc);
+  background: transparent;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600, #666);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.transcriptBtn:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.transcriptBtnActive {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest, rgba(37, 194, 160, 0.08));
+}
+
+/* ---- Transcript panel ---- */
+.transcript {
+  margin-top: 8px;
+  padding: 14px 18px;
+  background: var(--ifm-color-emphasis-100, #f0f2f5);
+  border: 1px solid var(--ifm-color-emphasis-200, #dee2e6);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
+  animation: fadeIn 0.2s ease;
+}
+
+[data-theme='dark'] .transcript {
+  background: var(--ifm-color-emphasis-100, #2a2a2a);
+  border-color: var(--ifm-color-emphasis-300, #444);
+}
+
+.transcriptLine {
+  margin: 0 0 4px;
+}
+
+.transcriptLine:last-child {
+  margin-bottom: 0;
+}
+
+.speaker {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

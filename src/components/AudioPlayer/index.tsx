@@ -1,4 +1,4 @@
-import {type ReactNode, useCallback, useEffect, useRef, useState} from 'react';
+import {type ReactNode, useCallback, useRef, useState} from 'react';
 import styles from './styles.module.css';
 
 interface AudioPlayerProps {
@@ -6,6 +6,8 @@ interface AudioPlayerProps {
   src: string;
   /** 显示标签 */
   label?: string;
+  /** 对话原文 */
+  transcript?: string;
 }
 
 function formatTime(sec: number): string {
@@ -18,6 +20,7 @@ function formatTime(sec: number): string {
 export default function AudioPlayer({
   src,
   label,
+  transcript,
 }: AudioPlayerProps): ReactNode {
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -25,6 +28,7 @@ export default function AudioPlayer({
   const [speed, setSpeed] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [showTranscript, setShowTranscript] = useState(false);
 
   const speeds = [0.5, 0.75, 1, 1.25, 1.5];
 
@@ -78,64 +82,112 @@ export default function AudioPlayer({
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
+  // Parse transcript lines for rendering
+  const transcriptLines = transcript
+    ? transcript
+        .trim()
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0)
+    : [];
+
   return (
-    <div className={styles.player}>
-      <audio
-        ref={audioRef}
-        src={src}
-        onPlay={handlePlay}
-        onPause={handlePause}
-        onEnded={handlePause}
-        onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={handleLoadedMetadata}
-        preload="metadata"
-      />
+    <div className={styles.wrapper}>
+      <div className={styles.player}>
+        <audio
+          ref={audioRef}
+          src={src}
+          onPlay={handlePlay}
+          onPause={handlePause}
+          onEnded={handlePause}
+          onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={handleLoadedMetadata}
+          preload="metadata"
+        />
 
-      {/* Play / Pause button */}
-      <button
-        className={`${styles.playBtn} ${playing ? styles.playing : ''}`}
-        onClick={togglePlay}
-        aria-label={playing ? '暂停' : '播放'}
-      >
-        {playing ? (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <rect x="2" y="1" width="3.5" height="12" rx="1" />
-            <rect x="8.5" y="1" width="3.5" height="12" rx="1" />
-          </svg>
-        ) : (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-            <path d="M3 1.5v11l9-5.5L3 1.5z" />
-          </svg>
+        {/* Play / Pause button */}
+        <button
+          className={`${styles.playBtn} ${playing ? styles.playing : ''}`}
+          onClick={togglePlay}
+          aria-label={playing ? '暂停' : '播放'}
+        >
+          {playing ? (
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+              <rect x="2" y="1" width="3.5" height="12" rx="1" />
+              <rect x="8.5" y="1" width="3.5" height="12" rx="1" />
+            </svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+              <path d="M3 1.5v11l9-5.5L3 1.5z" />
+            </svg>
+          )}
+        </button>
+
+        {/* Time: current */}
+        <span className={styles.time}>{formatTime(currentTime)}</span>
+
+        {/* Progress bar */}
+        <div
+          className={styles.progressBar}
+          ref={progressRef}
+          onClick={handleProgressClick}
+          role="progressbar"
+          aria-valuenow={Math.round(progress)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        >
+          <div className={styles.progressFill} style={{width: `${progress}%`}} />
+          <div className={styles.progressThumb} style={{left: `${progress}%`}} />
+        </div>
+
+        {/* Time: duration */}
+        <span className={styles.time}>{formatTime(duration)}</span>
+
+        {/* Label */}
+        {label && <span className={styles.label}>{label}</span>}
+
+        {/* Speed button */}
+        <button className={styles.speedBtn} onClick={cycleSpeed}>
+          {speed}x
+        </button>
+
+        {/* Transcript toggle */}
+        {transcriptLines.length > 0 && (
+          <button
+            className={`${styles.transcriptBtn} ${showTranscript ? styles.transcriptBtnActive : ''}`}
+            onClick={() => setShowTranscript(!showTranscript)}
+            aria-label={showTranscript ? '隐藏原文' : '查看原文'}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M2 3h12v1.5H2V3zm0 3.5h10v1.5H2V6.5zm0 3.5h12v1.5H2V10zm0 3.5h8v1.5H2V13.5z" />
+            </svg>
+            <span>{showTranscript ? '隐藏原文' : '查看原文'}</span>
+          </button>
         )}
-      </button>
-
-      {/* Time: current */}
-      <span className={styles.time}>{formatTime(currentTime)}</span>
-
-      {/* Progress bar */}
-      <div
-        className={styles.progressBar}
-        ref={progressRef}
-        onClick={handleProgressClick}
-        role="progressbar"
-        aria-valuenow={Math.round(progress)}
-        aria-valuemin={0}
-        aria-valuemax={100}
-      >
-        <div className={styles.progressFill} style={{width: `${progress}%`}} />
-        <div className={styles.progressThumb} style={{left: `${progress}%`}} />
       </div>
 
-      {/* Time: duration */}
-      <span className={styles.time}>{formatTime(duration)}</span>
-
-      {/* Label */}
-      {label && <span className={styles.label}>{label}</span>}
-
-      {/* Speed button */}
-      <button className={styles.speedBtn} onClick={cycleSpeed}>
-        {speed}x
-      </button>
+      {/* Transcript panel */}
+      {showTranscript && transcriptLines.length > 0 && (
+        <div className={styles.transcript}>
+          {transcriptLines.map((line, i) => {
+            // Detect speaker labels like **M:** or **W:** or **Q:**
+            const speakerMatch = line.match(/^\*\*(.+?):\*\*\s*(.*)/);
+            if (speakerMatch) {
+              return (
+                <p key={i} className={styles.transcriptLine}>
+                  <strong className={styles.speaker}>{speakerMatch[1]}:</strong>{' '}
+                  {speakerMatch[2]}
+                </p>
+              );
+            }
+            return (
+              <p key={i} className={styles.transcriptLine}>
+                {line}
+              </p>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
