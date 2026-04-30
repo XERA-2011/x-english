@@ -19,7 +19,7 @@
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #ffffff;
   --xe-surface-raised: #fafafa;
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.85);
+  --ifm-navbar-background-color: #ffffff;
 
   /* Typography Colors */
   --ifm-font-color-base: #0d0d0d;
@@ -42,7 +42,7 @@
   --ifm-background-color: #0d0d0d;
   --ifm-background-surface-color: #141414;
   --xe-surface-raised: #1c1c1c;
-  --ifm-navbar-background-color: rgba(13, 13, 13, 0.85);
+  --ifm-navbar-background-color: #0d0d0d;
 
   --ifm-font-color-base: #ededed;
   --xe-text: #ededed;
@@ -83,8 +83,12 @@ body {
 .navbar {
   border-bottom: 1px solid var(--xe-border);
   box-shadow: none !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--ifm-navbar-background-color);
+}
+
+/* Fix mobile sidebar overlapping due to translucent navbar background */
+.navbar-sidebar {
+  background-color: var(--ifm-background-surface-color) !important;
 }
 
 .navbar__title {
