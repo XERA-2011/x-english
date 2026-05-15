@@ -104,9 +104,3 @@ pnpm run deploy
 | `<VocabTable />` | 词汇表格 |
 | `<AudioPlayer />` | 音频播放 |
 | `<GrammarDiagram />` | 语法结构图 |
-
-## 维护建议
-
-- 新增文档前先确认目录归属与侧边栏位置
-- 提交前至少执行一次 `pnpm run lint`
-- 避免提交构建产物与日志文件
