@@ -32,6 +32,34 @@ const MODULES = [
     description: '泛听与精听结合，打破听力障碍。',
     path: '/docs/listening/intro',
   },
+  {
+    title: '🏆 PET3 备考 PETS-3',
+    description: '口试指导、听力、阅读、写作全攻略，助你顺利通关。',
+    path: '/docs/pet3/speaking/speaking-guide',
+  },
+];
+
+const FEATURES = [
+  {
+    icon: '💡',
+    title: '交互式测验 Quiz',
+    description: '内置填空、单选与判断等多种题型，答题后立即可见正误判断及详尽的语法/词汇知识点深度解析。',
+  },
+  {
+    icon: '🎴',
+    title: '智能记忆词卡 Flashcard',
+    description: '交互式双面翻转词卡，随时随地检测自己的词汇熟练度。科学巩固，告别传统枯燥的单词背诵。',
+  },
+  {
+    icon: '🎧',
+    title: '跟读与精听播放器 Audio',
+    description: '配备定制的高清音频控制器，并结合 CEFR 难度标签（A2 - B2），让你的听力与口语跟读练习循序渐进。',
+  },
+  {
+    icon: '✍️',
+    title: '写作打卡海报 Poster',
+    description: '提供各类考试及日常写作题目、高亮核心模版和译文折叠。在线写作、实时字数统计，一键生成精美海报分享打卡。',
+  },
 ];
 
 function HomepageHeader() {
@@ -46,7 +74,7 @@ function HomepageHeader() {
             <span className={styles.heroTitleHighlight}>Engineering Precision</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            X-English 是一个面向中文学习者的现代化英语知识库。我们将英语学习解构为语法、词汇等五大核心模块，助你从零基础到流利表达。
+            X-English 是一个面向中文学习者的现代化英语知识库。我们将英语学习解构为语法、词汇与 PETS-3 备考等核心模块，助你从零基础到流利表达。
           </p>
           <div className={styles.heroButtons}>
             <Link
@@ -93,6 +121,34 @@ function ModulesSection() {
   );
 }
 
+function FeaturesSection() {
+  return (
+    <section className={styles.featuresSection}>
+      <div className="container">
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionLabel}>Interactive Learning</span>
+          <Heading as="h2" className={styles.sectionTitle}>
+            Premium Interactive Experience
+          </Heading>
+          <p className={styles.sectionDescription}>
+            不止是静态的阅读，我们提供丰富的现代化交互组件，让每一次练习都获得即时反馈，极大提升学习效率。
+          </p>
+        </div>
+        
+        <div className={styles.featuresGrid}>
+          {FEATURES.map((feat, idx) => (
+            <div key={idx} className={styles.featureCard}>
+              <div className={styles.featureIcon}>{feat.icon}</div>
+              <Heading as="h3" className={styles.featureTitle}>{feat.title}</Heading>
+              <p className={styles.featureDesc}>{feat.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   return (
     <Layout
@@ -101,6 +157,7 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <ModulesSection />
+        <FeaturesSection />
       </main>
     </Layout>
   );
