@@ -23,6 +23,17 @@ export default function Flashcard({
 }: FlashcardProps): ReactNode {
   const [flipped, setFlipped] = useState(false);
 
+  const isVeryLong = front.length > 25;
+  const isLong = front.length > 12;
+
+  const frontClass = `${styles.frontWord} ${
+    isVeryLong ? styles.frontWordVeryLong : isLong ? styles.frontWordLong : ''
+  }`;
+  
+  const backClass = `${styles.backWord} ${
+    isVeryLong ? styles.backWordVeryLong : isLong ? styles.backWordLong : ''
+  }`;
+
   return (
     <div
       className={`${styles.flashcard} ${flipped ? styles.flipped : ''}`}
@@ -35,14 +46,14 @@ export default function Flashcard({
         {/* Front */}
         <div className={styles.cardFront}>
           <div className={styles.cardLabel}>点击翻转 👆</div>
-          <div className={styles.frontWord}>{front}</div>
+          <div className={frontClass}>{front}</div>
           {phonetic && <div className={styles.phonetic}>{phonetic}</div>}
         </div>
 
         {/* Back */}
         <div className={styles.cardBack}>
           <div className={styles.cardLabel}>点击翻回 👆</div>
-          <div className={styles.backWord}>{front}</div>
+          <div className={backClass}>{front}</div>
           <div className={styles.backMeaning}>{back}</div>
           {phonetic && <div className={styles.phonetic}>{phonetic}</div>}
           {example && (

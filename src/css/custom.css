@@ -139,3 +139,23 @@ code {
 .docusaurus-highlight-code-line {
   background-color: var(--xe-surface-raised);
 }
+
+/* Flashcard Grid Layout */
+.xe-flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 2rem 0;
+}
+
+.xe-flashcard-grid > * {
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .xe-flashcard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
