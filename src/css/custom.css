@@ -18,6 +18,7 @@
   /* Backgrounds & Surfaces */
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #ffffff;
+  --xe-surface: #ffffff;
   --xe-surface-raised: #fafafa;
   --ifm-navbar-background-color: #ffffff;
 
@@ -27,6 +28,8 @@
   --xe-text: #0d0d0d;
   --xe-text-secondary: #666666;
   --xe-text-tertiary: #888888;
+  --xe-success: #10B981;
+  --xe-error: #EF4444;
   
   /* Borders (Mintlify relies heavily on borders rather than shadows) */
   --xe-border: rgba(0, 0, 0, 0.05);
@@ -41,6 +44,7 @@
 [data-theme='dark'] {
   --ifm-background-color: #0d0d0d;
   --ifm-background-surface-color: #141414;
+  --xe-surface: #141414;
   --xe-surface-raised: #1c1c1c;
   --ifm-navbar-background-color: #0d0d0d;
 
@@ -48,6 +52,8 @@
   --xe-text: #ededed;
   --xe-text-secondary: #a0a0a0;
   --xe-text-tertiary: #666666;
+  --xe-success: #10B981;
+  --xe-error: #EF4444;
 
   --xe-border: rgba(255, 255, 255, 0.08);
   --xe-border-stronger: rgba(255, 255, 255, 0.12);
@@ -74,7 +80,7 @@ h3, .markdown h3 {
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -158,4 +164,76 @@ code {
     gap: 16px;
   }
 }
+
+/* Relaxed, airy but cozy typography for documentation content (.markdown) */
+.markdown {
+  --ifm-line-height-base: 1.65;
+  --ifm-paragraph-margin-bottom: 1.1rem;
+  --ifm-list-margin-bottom: 1.1rem;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown table {
+  margin-bottom: 1.1rem;
+}
+
+.markdown li {
+  margin-bottom: 0.45rem;
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.markdown h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.95rem;
+}
+
+.markdown h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown hr {
+  margin: 2.25rem 0;
+  opacity: 0.08;
+}
+
+.markdown table {
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+  width: 100%;
+}
+
+/* Beautiful custom blockquote container style (for dialog transcripts and tips) */
+.markdown blockquote {
+  background: var(--xe-surface-raised);
+  border-left: 4px solid var(--ifm-color-primary-dark);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  margin: 1.5rem 0;
+  color: var(--xe-text);
+  font-size: 0.95rem;
+  line-height: 1.625;
+}
+
+.markdown blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+.markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown blockquote hr {
+  margin: 1rem 0;
+  opacity: 0.15;
+}
+
 
