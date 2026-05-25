@@ -33,9 +33,9 @@
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "@types/react": "^19.0.0",
+    "@types/react": "^19.2.15",
     "typescript": "~5.9.3",
-    "wrangler": "^4.92.0"
+    "wrangler": "^4.94.0"
   },
   "browserslist": {
     "production": [
