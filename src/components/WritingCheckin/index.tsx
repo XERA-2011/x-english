@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './styles.module.css';
+import QRCode from 'qrcode';
 
 /* ── Types & Data ── */
 
@@ -118,7 +119,7 @@ export default function WritingCheckin(): React.ReactNode {
     return `约 ${topic.targetWords} 词`;
   };
 
-  const generatePoster = useCallback(() => {
+  const generatePoster = useCallback(async () => {
     if (!canvasRef.current || !selectedTopic) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -156,7 +157,7 @@ export default function WritingCheckin(): React.ReactNode {
     const textStartY = 330;
     const lineHeight = 48;
     const textHeight = allLines.length * lineHeight;
-    const height = textStartY + textHeight + 140; // Add footer space
+    const height = textStartY + textHeight + 200; // Add footer space for QR Code
 
     // Set actual canvas size
     canvas.width = width * dpr;
@@ -211,13 +212,27 @@ export default function WritingCheckin(): React.ReactNode {
 
     // 5. Draw Footer
     ctx.beginPath();
-    ctx.moveTo(50, height - 90);
-    ctx.lineTo(width - 50, height - 90);
+    ctx.moveTo(50, height - 160);
+    ctx.lineTo(width - 50, height - 160);
     ctx.stroke();
+
+    // Draw QR Code
+    try {
+      const qrDataUrl = await QRCode.toDataURL(window.location.href, { margin: 1, width: 120, color: { dark: '#333333', light: '#ffffff' } });
+      const qrImg = new Image();
+      qrImg.src = qrDataUrl;
+      await new Promise((resolve) => {
+        qrImg.onload = resolve;
+      });
+      ctx.drawImage(qrImg, width - 50 - 120, height - 145, 120, 120);
+    } catch (err) {
+      console.error('Failed to generate QR code', err);
+    }
 
     ctx.fillStyle = '#aaaaaa';
     ctx.font = '24px Inter, "Noto Sans SC", sans-serif';
-    ctx.fillText('访问 x-english.pages.dev 获取更多英语资料', 50, height - 40);
+    ctx.fillText('长按识别二维码或扫码', 50, height - 100);
+    ctx.fillText('访问 x-english.pages.dev 获取更多英语资料', 50, height - 55);
 
     // Convert to image
     const dataUrl = canvas.toDataURL('image/png');
