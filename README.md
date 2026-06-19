@@ -6,8 +6,6 @@
 
 X-English 是一个基于 Docusaurus 构建的英语学习文档站，当前内容覆盖通用英语能力训练（词汇、语法、听力、阅读、写作）与 **PETS-3 专项备考**。
 
-**⚠️ 约定：本项目统一使用 [pnpm](https://pnpm.io/) 作为包管理器。请勿使用 `npm` 或 `yarn` 生成/提交 lock 文件。**
-
 ## 🌐 在线地址
 
 | Platform | URL |
