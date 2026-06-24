@@ -2,9 +2,15 @@ name: CI
 
 on:
   pull_request:
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
 
 concurrency:
   group: ci-${{ github.ref }}

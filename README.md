@@ -106,3 +106,4 @@ pnpm run deploy
 | `<VocabTable />` | 词汇表格 |
 | `<AudioPlayer />` | 音频播放 |
 | `<GrammarDiagram />` | 语法结构图 |
+| `<WritingCheckin />` | 写作打卡与海报生成 |
