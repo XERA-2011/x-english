@@ -38,7 +38,7 @@
     "@types/react": "^19.3.0",
     "sharp": "^0.35.5",
     "typescript": "~5.9.3",
-    "wrangler": "^4.151.0"
+    "wrangler": "^4.152.0"
   },
   "browserslist": {
     "production": [
